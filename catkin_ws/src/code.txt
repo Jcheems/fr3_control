@@ -1,0 +1,19 @@
+cd /home/jack/catkin_ws
+catkin_make
+
+URDF 传输
+roscore
+rosrun xacro_transmission xacro_publisher.py
+rosrun xacro_receiver xacro_receiver.py
+
+gazebo + rviz 模拟（有末端执行器）
+roslaunch franka_simulation fr3_simulation.launch
+
+gazebo + rviz 模拟无线（无末端执行器，机械臂抖动）
+roslaunch franka_gazebo fr3.launch
+rviz
+跑cartesian
+
+moveit + rviz模拟
+roslaunch fr3_moveit_config demo.launch
+跑config/scripts/move_fr3.py

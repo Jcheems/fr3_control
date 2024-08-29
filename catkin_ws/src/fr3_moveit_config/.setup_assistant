@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: franka_description
+    relative_path: robots/fr3/fr3.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/fr3.srdf
+  CONFIG:
+    author_name: Jack
+    author_email: jack777zhao@163.com
+    generated_timestamp: 1723774045

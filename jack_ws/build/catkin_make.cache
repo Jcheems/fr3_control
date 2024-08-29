@@ -1,0 +1,2 @@
+panda_moveit_config:xacro_transmission
+-DCATKIN_DEVEL_PREFIX=/home/vivian/Robot/jack_ws/devel -DCMAKE_INSTALL_PREFIX=/home/vivian/Robot/jack_ws/install -G Unix Makefiles

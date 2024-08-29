@@ -1,0 +1,8 @@
+prefix=/home/jack/catkin_ws/install
+
+Name: franka_simulation
+Description: Description of franka_simulation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

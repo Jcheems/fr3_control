@@ -1,0 +1,1 @@
+roslaunch panda_moveit_config franka_control.launch arm_id:=fr3

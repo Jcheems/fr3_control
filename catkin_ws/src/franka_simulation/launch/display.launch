@@ -1,0 +1,8 @@
+<launch>
+  <!-- Load robot description -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find franka_description)/robots/fr3/fr3.urdf.xacro'" />
+
+  <!-- Run RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find franka_description)/rviz/fr3.rviz" required="true" />
+</launch>
+

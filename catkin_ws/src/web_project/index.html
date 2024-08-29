@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FR3 Joint States</title>
+    <script src="js/roslib.min.js"></script>
+</head>
+<body>
+    <h1>FR3 Joint States</h1>
+    <div id="joint-states"></div>  <!-- 用于显示关节参数的div -->
+
+    <script type="text/javascript">
+        // 连接到ROS
+        var ros = new ROSLIB.Ros({
+            url: 'ws://localhost:9090'
+        });
+
+        ros.on('connection', function() {
+            console.log('Connected to websocket server.');
+        });
+
+        ros.on('error', function(error) {
+            console.log('Error connecting to websocket server: ', error);
+        });
+
+        ros.on('close', function() {
+            console.log('Connection to websocket server closed.');
+        });
+
+        // 订阅 /joint_states 主题
+        var jointStateListener = new ROSLIB.Topic({
+            ros: ros,
+            name: '/joint_states',
+            messageType: 'sensor_msgs/JointState'
+        });
+
+        // 更新关节状态的函数
+        function updateJointStates(message) {
+            var jointStatesDiv = document.getElementById('joint-states');
+            jointStatesDiv.innerHTML = '';  // 清空之前的内容
+
+            var jointNames = message.name;
+            var jointPositions = message.position;
+            var jointVelocities = message.velocity;
+            var jointEfforts = message.effort;
+
+            for (var i = 0; i < jointNames.length; i++) {
+                var jointInfo = '<p><strong>' + jointNames[i] + '</strong><br>';
+                jointInfo += 'Position: ' + jointPositions[i].toFixed(4) + '<br>';
+                jointInfo += 'Velocity: ' + jointVelocities[i].toFixed(4) + '<br>';
+                jointInfo += 'Effort: ' + jointEfforts[i].toFixed(4) + '</p>';
+                jointStatesDiv.innerHTML += jointInfo;
+            }
+        }
+
+        // 引入节流函数来限制更新频率
+        function throttle(func, limit) {
+            let lastFunc;
+            let lastRan;
+            return function() {
+                const context = this;
+                const args = arguments;
+                if (!lastRan) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                } else {
+                    clearTimeout(lastFunc);
+                    lastFunc = setTimeout(function() {
+                        if ((Date.now() - lastRan) >= limit) {
+                            func.apply(context, args);
+                            lastRan = Date.now();
+                        }
+                    }, limit - (Date.now() - lastRan));
+                }
+            };
+        }
+
+        // 使用节流函数，每500ms更新一次
+        var throttledUpdateJointStates = throttle(updateJointStates, 500);
+
+        // 订阅 /joint_states 主题并使用节流函数处理数据
+        jointStateListener.subscribe(throttledUpdateJointStates);
+    </script>
+</body>
+</html>
+

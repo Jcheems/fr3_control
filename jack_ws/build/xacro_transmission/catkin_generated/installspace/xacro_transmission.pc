@@ -1,0 +1,8 @@
+prefix=/home/vivian/Robot/jack_ws/install
+
+Name: xacro_transmission
+Description: Description of xacro_transmission
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

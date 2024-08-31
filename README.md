@@ -1,5 +1,5 @@
-# fr3_control
-Welcome to my master's thesis workspace, where all the relevant files from the working period are stored, including original documents, relevant images and video.
+# FR3_control
+Welcome to my master's thesis workspace, where all the relevant files from the working period are stored, including original documents, relevant images and video. The origin dissertation can be accessed by [Master dissertation](https://github.com/Jcheems/fr3_control/blob/main/11428365.pdf).
 
 # FR3 Manipulator Control and Simulation Project
 
@@ -27,9 +27,8 @@ This project focuses on the simulation, control, and remote operation of the FR3
 - ***Python control***
 ![iamge](https://github.com/Jcheems/fr3_control/blob/main/remote_control_2.png)
 
-
 Here is an example:
-<video src='https://github.com/Jcheems/fr3_control/blob/main/demo.mp4' width=180/>
+<video src='https://github.com/user-attachments/assets/6a353f51-a0d2-4f26-9ad0-0df41c4e408f' width=180/>
 
 ## Getting Started
 
@@ -163,3 +162,8 @@ RViz
 
 You can also run your python code with proper interface:
 
+Python control 1 | Python control 2
+:-: | :-:
+<video src='https://github.com/user-attachments/assets/c92e218d-6cd5-4ec3-a745-399b819a0d58' width=180/> | <video src='https://github.com/user-attachments/assets/6eafc434-a1d5-42bd-9057-7c8a6386fa2c' width=180/>
+
+For more item descriptions and instructions check out [Master dissertation](https://github.com/Jcheems/fr3_control/blob/main/11428365.pdf).

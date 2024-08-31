@@ -66,11 +66,12 @@ export ROS_MASTER_URI=http://<IP of device A> :11311
 export ROS_HOSTNAME=<IP of device B>
 ```
 
-11311 is the ros default interface.You can check these variables by:
+11311 is the ros default interface.
+You can check these variables by:
 
 ```
 echo $ROS_MASTER_URI
-echo $R0s_HOSTNAME
+echo $ROS_HOSTNAME
 ```
 
 Test the connection by entering command on device B:

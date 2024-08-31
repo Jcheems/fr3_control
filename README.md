@@ -22,11 +22,11 @@ This project focuses on the simulation, control, and remote operation of the FR3
 - ***Python control***
 ![iamge](https://github.com/Jcheems/fr3_control/blob/main/remote_control_2.png)
 
-```HTML
+
 <video width="320" height="240" controls>
     <source src="python_control_1.mp4" type="video/mp4">
 </video>
-```
+
 ## Getting Started
 
 ### Prerequisites

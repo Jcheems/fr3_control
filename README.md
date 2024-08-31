@@ -5,6 +5,7 @@ Welcome to my master's thesis workspace, where all the relevant files from the w
 
 This project focuses on the simulation, control, and remote operation of the FR3 manipulator using ROS, Gazebo, RViz, and MoveIt. The project is divided into three key components: URDF file transfer, manipulator simulation, and remote control of the real manipulator.
 
+![image](https://github.com/Jcheems/fr3_control/blob/main/fr3.gif)
 ## Project Structure
 
 - **URDF File Transfer**: Implements the wireless transfer of URDF files between devices. Using ROS communication mechanisms, the project enables the sharing of manipulator models across remote devices, allowing for the seamless transfer and visualization of URDF files in RViz.
